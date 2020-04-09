@@ -18,7 +18,7 @@ class App {
         this.app.express.use(logger("dev"));
         this.app.express.use(helmet());
     };
-    "esModuleInterop": true;
+   
 }
 
 export default new App().app;
