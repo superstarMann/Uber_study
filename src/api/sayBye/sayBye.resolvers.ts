@@ -1,12 +1,12 @@
-import { Greeting } from "../../types/graph";
+import { SayByeQueryArgs, ByeName } from "../../types/graph";
 
 const resolvers = {
     Query: {
-        sayBye: (): Greeting=> {
+        sayBye: (_,args: SayByeQueryArgs): ByeName=> {
             return {
                 error: true,
-                text: "i did it! okay let me tell you , first you make the fuction ,second use in here!"
-            }
+                text:`i did it! okay let me tell you , first you make the fuction ,second use in here! and third welcome ${args.name}`
+                };
         }
     }
 };

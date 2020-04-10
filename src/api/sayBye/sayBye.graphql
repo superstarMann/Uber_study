@@ -1,4 +1,4 @@
-type Greeting {
+type ByeName {
     error: Boolean!
     text: String!
 }
@@ -6,5 +6,7 @@ type Greeting {
 
 
 type Query{
-    sayBye: Greeting!
+    sayBye(name: String!): ByeName!
 }
+
+
