@@ -1,7 +1,14 @@
+import { Greeting } from "../../types/graph";
+
 const resolvers = {
     Query: {
-        sayHello: () => "yo what's up hello"
+        sayHello: () : Greeting => {
+            return {
+                error: false,
+                text: "wow"
+            };
     }
+}
 };
 
 export default resolvers;
