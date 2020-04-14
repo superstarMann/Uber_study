@@ -1,15 +1,15 @@
-import {ConnectionOptions} from "typeorm";
+import { ConnectionOptions } from "typeorm";
 
 const connectionOptions: ConnectionOptions = {
-    type:"postgres",
-    database: "nuber",
-    synchronize: true,
-    logging: true,
-    entities: ["entities/**/*.*"],
-    host: process.env.DB_ENDPOINT || "localhost",
-    port: 5432,
-    username: process.env.DB_USERNAME || "seungHun",
-    password: process.env.DB_PASSWORD || ""
+  type: "postgres",
+  database: "nuber",
+  synchronize: true,
+  logging: true,
+  entities: ["entities/**/*.*"],
+  host: process.env.DB_ENDPOINT || "localhost",
+  port: 5432,
+  username: process.env.DB_USERNAME || "wsx94503",
+  password: process.env.DB_PASSWORD || ""
 };
 
 export default connectionOptions;
