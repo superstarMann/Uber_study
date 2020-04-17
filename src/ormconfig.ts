@@ -8,7 +8,7 @@ const connectionOptions: ConnectionOptions = {
   entities: ["entities/**/*.*"],
   host: process.env.DB_ENDPOINT || "localhost",
   port: 5432,
-  username: process.env.DB_USERNAME || "86xju94wi4.",
+  username: process.env.DB_USERNAME || "edc94",
   password: process.env.DB_PASSWORD || ""
 };
 
