@@ -6,10 +6,12 @@ const connectionOptions: ConnectionOptions = {
   synchronize: true,
   logging: true,
   entities: ["entities/**/*.*"],
-  host: process.env.DB_ENDPOINT || "localhost",
+  host: process.env.DB_ENDPOINT,
   port: 5433,
-  username: process.env.DB_USERNAME || "postgres",
-  password: process.env.DB_PASSWORD || "86xju94wi4."
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD
 };
 
 export default connectionOptions;
+
+//pg_ctl -D "C:\Program Files\PostgreSQL\12\data" stop
