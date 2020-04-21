@@ -13,9 +13,13 @@ type User {
     isDriving: Boolean!
     isRiding: Boolean!
     isTaken: Boolean!
-    lastLng:Float
-    lastLat:Float
+    lastLatitude:Float 
+    lastLongitude:Float
     lastOrientation:Float
     CreateAt: String! 
     UpdateAt: String!
+}
+
+type Query{
+    user: User
 }

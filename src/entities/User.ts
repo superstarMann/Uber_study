@@ -13,6 +13,10 @@ class User extends BaseEntity {
     @Column({type: "text"})
     LastName: string;
 
+    get FullName(): string{
+        return `${this.firstName} ${this.LastName}`;
+    }
+      
     @Column({type: "text", unique: true})
     @IsEmail()
     Email: string;
@@ -31,6 +35,24 @@ class User extends BaseEntity {
 
     @Column({type:"text"})
     ProfilePhoto: string;
+
+    @Column({type: "boolean", default: false})
+    isDriving: boolean;
+
+    @Column({type: "boolean", default: false})
+    isRiding: boolean;
+
+    @Column({type: "boolean", default: false})
+    isTaken: boolean;
+    
+    @Column({type: "double precision", default: 0})
+    lastLongitude: number; //경도
+    
+    @Column({type:"double precision", default: 0})
+    lastLatitude: number; //lastLatitude: 위도
+
+    @Column({type: "double precision", default: 0})
+    lastOrientation: number; //방향
 
     @CreateDateColumn() 
     CreateAt: string;
