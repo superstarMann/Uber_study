@@ -5,9 +5,6 @@ import app from "./app";
 import {createConnection}from "typeorm";
 import connectionOptions from "./ormconfig";
 
-
-
-
 const PORT: number | string = process.env.PORT || 4000;
 const PLAYGROUND : string = "/playground";
 const GRAPHQL_ENDPOINT : string = "/graphql";
