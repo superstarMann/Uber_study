@@ -1,12 +1,13 @@
 import { Entity, PrimaryColumn, BaseEntity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import { VerificationTarget } from "../types/types";
 
 @Entity()
 class Verification extends BaseEntity{
    @PrimaryGeneratedColumn()
    id: number;
 
-   @Column({type: "text"})
-   targent: string; // target => phone
+   @Column({type: "text", enum: ["PHONE", "EMAIL"] })
+   targent: VerificationTarget; // target => phone || password      `|| = or `
 
    @Column({type: "text"})
    payload: string;   // phonenumber: ex) +01051741436

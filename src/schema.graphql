@@ -1,14 +1,35 @@
-type ByeName {
-  error: Boolean!
-  text: String!
+type User {
+  id: Int!
+  password: String
+  firstName: String!
+  LastName: String!
+  FullName: String
+  email: String
+  verifiedEmail: Boolean!
+  PhoneNumber: String
+  verifiedPhoneNumber: Boolean!
+  age: Int
+  ProfilePhoto: String
+  isDriving: Boolean!
+  isRiding: Boolean!
+  isTaken: Boolean!
+  lastLatitude: Float
+  lastLongitude: Float
+  lastOrientation: Float
+  CreateAt: String!
+  UpdateAt: String!
 }
 
 type Query {
-  sayBye(name: String!): ByeName!
-  sayHello(name: String!): SayhelloResponse!
+  user: User
 }
 
-type SayhelloResponse {
-  text: String!
-  error: Boolean!
+type Verification {
+  id: Int!
+  target: String!
+  payload: String!
+  key: String!
+  used: Boolean!
+  createAt: String!
+  updateAt: String!
 }
