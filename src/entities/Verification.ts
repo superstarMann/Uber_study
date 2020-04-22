@@ -6,20 +6,20 @@ class Verification extends BaseEntity{
    id: number;
 
    @Column({type: "text"})
-   targent: string;
+   targent: string; // target => phone
 
    @Column({type: "text"})
-   payload: string;
+   payload: string;   // phonenumber: ex) +01051741436
 
    @Column({type: "text"})
-   key: string;
+   key: string;   // password ex)1234
 
    @Column({type: "boolean", default: false})
-   used: boolean
-
+   used: boolean  
+ 
    @CreateDateColumn() createAt: string;
    @UpdateDateColumn() updateAt: string;
 
 }
 
-export default Verification
+export default Verification;
