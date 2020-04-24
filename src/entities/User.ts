@@ -61,10 +61,10 @@ class User extends BaseEntity {
     lastOrientation: number; //방향
 
     @CreateDateColumn() 
-    CreateAt: string;
+    createAt: string;
 
     @UpdateDateColumn()
-    UpdateAt: string;  
+    updateAt: string;  
 
     public comparepassword(password:string) : Promise<boolean>{
        return bcrypt.compare(password, this.password);

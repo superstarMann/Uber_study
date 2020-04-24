@@ -1,5 +1,5 @@
 type Place {
-  id: int!
+  id: Int!
   name: String!
   lat: Float!
   lng: Float!
@@ -27,8 +27,8 @@ type User {
   lastLatitude: Float
   lastLongitude: Float
   lastOrientation: Float
-  CreateAt: String!
-  UpdateAt: String!
+  createAt: String!
+  updateAt: String!
 }
 
 type Query {
