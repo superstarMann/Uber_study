@@ -1,5 +1,8 @@
-import { Entity, PrimaryColumn, BaseEntity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import { Entity, PrimaryColumn, BaseEntity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, BeforeInsert } from "typeorm";
 import { VerificationTarget } from "../types/types";
+
+const PHONE = "PHONE";
+const EMAIL = "EMAIL";
 
 @Entity()
 class Verification extends BaseEntity{
@@ -20,6 +23,15 @@ class Verification extends BaseEntity{
  
    @CreateDateColumn() createAt: string;
    @UpdateDateColumn() updateAt: string;
+
+   @BeforeInsert()
+   createKey() : void {
+       if(this.target === PHONE){
+            this.key = Math.floor(Math.random() * 100000).toString(); //비번은 4자가 국룰이니깐 나중에 4자로 변환
+       }else if(this.target === EMAIL){
+            this.key = Math.random().toString(36).substr(2);
+       }
+   }
 
 }
 
