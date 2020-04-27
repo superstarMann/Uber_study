@@ -1,5 +1,6 @@
-import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne } from "typeorm";
 import { RideStatus } from "../types/types";
+import User from "./User";
 
 @Entity()
 class Ride extends BaseEntity{
@@ -42,6 +43,13 @@ class Ride extends BaseEntity{
 
     @UpdateDateColumn()
     updateAt: string;
+
+    @ManyToOne(type => User, user => user.ridesAsPassenger)
+    passenger: User;
+
+    @ManyToOne(type => User, user => user.ridesAsDriver)
+    driver: User;
+
 }
 
 export default Ride;
