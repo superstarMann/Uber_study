@@ -20,7 +20,6 @@ class Chat extends BaseEntity{
 
    @UpdateDateColumn()
    updateAt: string;
-   
 
 }
 export default Chat;
