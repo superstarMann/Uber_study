@@ -11,7 +11,7 @@ class Verification extends BaseEntity{
    id: number;
 
    @Column({type: "text", enum: ["PHONE", "EMAIL"] })
-   target: VerificationTarget; // target => phone || password      `|| = or `
+   target: VerificationTarget; // target => phone || password   `|| = or `
 
    @Column({type: "text"})
    payload: string;   // phonenumber: ex) +01051741436
