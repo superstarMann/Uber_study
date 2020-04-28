@@ -54,6 +54,16 @@ type Mutation {
   FacebookConnect(firstName: String!, lastName: String!, email: String, fbId: String!): FacebookConnectResponse!
 }
 
+type InstagramResponse {
+  ok: Boolean!
+  error: String
+  token: String
+}
+
+type Mutation_Instagram {
+  InstagramConnect(firstName: String!, lastName: String!, email: String, instaId: String!): InstagramResponse
+}
+
 type User {
   id: Int!
   password: String
