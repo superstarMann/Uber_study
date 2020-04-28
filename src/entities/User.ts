@@ -14,37 +14,37 @@ class User extends BaseEntity {
     @PrimaryGeneratedColumn() 
     id: number;
     
-    @Column({type:"text"})
+    @Column({type:"text", nullable: true})
     password: string;
 
     @Column({type: "text"})
     firstName: string;
 
     @Column({type: "text"})
-    LastName: string;
+    lastName: string;
 
     get FullName(): string{
-        return `${this.firstName} ${this.LastName}`;
+    return `${this.firstName} ${this.lastName}`;
     }
       
-    @Column({type: "text", unique: true})
+    @Column({type: "text", nullable: true})
     @IsEmail()
-    Email: string;
+    email: string | null ;
 
     @Column({type: "boolean", default: false})
     verifiedEmail: boolean;
     
-    @Column({type: "text"})
-    PhoneNumber: string;
+    @Column({type: "text", nullable: true})
+    phoneNumber: string;
 
     @Column({type: "boolean", default: false})
     verifiedPhoneNumber: boolean;
 
-    @Column({type:"int"})
+    @Column({type:"int", nullable: true})
     age: number;
 
     @Column({type:"text"})
-    ProfilePhoto: string;
+    profilePhoto: string;
 
     @Column({type: "boolean", default: false})
     isDriving: boolean;
@@ -78,6 +78,9 @@ class User extends BaseEntity {
 
     @OneToMany(type => Ride, ride => ride.driver)
     ridesAsDriver: Driver[];
+
+    @Column({type: "text",nullable: true })
+    fbId: string;
     
 
     @CreateDateColumn() 
